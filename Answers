@@ -103,35 +103,90 @@ setter and constructor injection. Also there is a thrd type which is c/d reflect
 24. What is constructor injection?
 How do you choose between setter and constructor injections?
 Spring mostly advices us to use constructor injection only as constructors injection makes an immutable bean as entire bean is made at one instance but in
-case of setter injection we havee to first create bean with default constrcutor and then calling setter method to inject 
+case of setter injection we havee to first create bean with default constrcutor and then calling setter method to inject. Also constructor injection has
+downfalls too. basically we canot have constrcutors with so many arguments which in turns helps us to know that our class is havily dependent upon
+multiple things.
 . For a thumbrule we can say, constrcutors for mandatory dependencies and setter injection for
 optional dependencies
 
 25.What are the different options available to create Application Contexts for Spring?
 
 
-What is the difference between XML and Java Configurations for Spring?
-How do you choose between XML and Java Configurations for Spring?
-How does Spring do Autowiring?
-What are the different kinds of matching used by Spring for Autowiring?
-How do you debug problems with Spring Framework?
-How do you solve NoUniqueBeanDefinitionException?
-How do you solve NoSuchBeanDefinitionException?
-What is @Primary?
-What is @Qualifier?
-What is CDI (Contexts and Dependency Injection)?
-Does Spring Support CDI?
-Would you recommed to use CDI or Spring Annotations?
-What are the major features in different versions of Spring?
-What are new features in Spring Framework 4.0?
-What are new features in Spring Framework 5.0?
-What are important Spring Modules?
-What are important Spring Projects?
-What is the simplest way of ensuring that we are using single version of all Spring related dependencies?
-Name some of the design patterns used in Spring Framework?
-What do you think about Spring Framework?
-Why is Spring Popular?
-Can you give a big picture of the Spring Framework?
+26. What is the difference between XML and Java Configurations for Spring?
+Spring boot helps us to do better with annonation configuration
+
+27.How do you choose between XML and Java Configurations for Spring?
+28.How does Spring do Autowiring?
+  byType -> class or interface
+  byName -> Spring also autowires using name,
+    for exa - 
+    @autowired
+    private SortAlgorithm quickSortAlgorithm; and SortAlgorithm is implemented by 2 classes QuickSortAlgorithm and BubbleSortAlgorithm then in that case
+    Spring can guess that quickSortAlgorithm is analogous to QuickSortAlgorithm and will intialize QuickSortAlgorithm as camel case is understood by Spring
+    
+  constructor(similar to byType but through constructor) - 
+  class TestClass {
+  
+  SortAlgorithm classAlgorithm;
+  public testClass(SortAlgorithm algorithm;)
+  classAlgorithm = algorithm;
+  }
+  
+  In this case, Speing will try to find dependeny of SortAlgorithm type and use constrcutor for autowiring.
+  
+  
+  
+29.What are the different kinds of matching used by Spring for Autowiring?
+
+30.How do you debug problems with Spring Framework?
+NoSuchBeanException - when spring can not find bean - possibly because @component is not present, or maybe component scan has not been applied correctly
+
+
+31.How do you solve NoUniqueBeanDefinitionException?
+    private SortAlgorithm quickSortAlgorithm; and SortAlgorithm is implemented by 2 classes QuickSortAlgorithm and BubbleSortAlgorithm then in that case
+    Spring can guess that quickSortAlgorithm is analogous to QuickSortAlgorithm and will intialize QuickSortAlgorithm as camel case is understood by Spring
+    
+  constructor(similar to byType but through constructor) - 
+  class TestClass {
+  
+  SortAlgorithm classAlgorithm;
+  public testClass(SortAlgorithm algorithm;)
+  classAlgorithm = algorithm;
+  }
+
+here, there will be a an exception as classAlgorithm wont be able to decide which implementation to use, so to solve this
+We can autowire by name in case of a problem like this.
+
+  
+  SortAlgorithm quickSortAlgorithm;
+  public testClass(SortAlgorithm algorithm;)
+  classAlgorithm = algorithm;
+  }
+  
+  Now Spring container will undertsand that quickSortAlgorithm implementation is reqd.
+  
+  or use @primary which tells that which implemnetation is the primary choice
+  or use @qualifier("bubblesoertAlgorithm") and same qualifier should be on the implemented class too which we are using here
+
+32.How do you solve NoSuchBeanDefinitionException?
+
+33.What is @Primary?
+34.What is @Qualifier?
+35.What is CDI (Contexts and Dependency Injection)?
+
+
+36.Does Spring Support CDI?
+37.Would you recommed to use CDI or Spring Annotations?
+38.What are the major features in different versions of Spring?
+39.What are new features in Spring Framework 4.0?
+40.What are new features in Spring Framework 5.0?
+41.What are important Spring Modules?
+42.What are important Spring Projects?
+43.What is the simplest way of ensuring that we are using single version of all Spring related dependencies?
+44.Name some of the design patterns used in Spring Framework?
+45.What do you think about Spring Framework?
+46.Why is Spring Popular?
+47Can you give a big picture of the Spring Framework?
 Spring MVC
 What is Model 1 architecture?
 What is Model 2 architecture?
