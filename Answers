@@ -194,33 +194,92 @@ Test layers - Dependency injection, helps us to write tests easily with mocks
 42.What are important Spring Projects?
 Spring boot- for developing microservices, develop apps quickly, quick config, actuator
 Spring cloud - 
+Spring data - Spring data helps to access data from databases easier way
+Spring batch - Restart a 
+Spring Security - Provide solutions to securing applications
+Sprig hateOS - reuturn related links with data asked for
+
 
 43.What is the simplest way of ensuring that we are using single version of all Spring related dependencies?
+Use a BOM(Bill of material) dependencies in pom, <dependencymanagerment><Spring version>5.0.0 </></>
+
+
 44.Name some of the design patterns used in Spring Framework?
+Front controller - Dispactcher servlet
+Protoype- beans
+Dependency Injections
+factory pattern - Bean factory and Aplication context
+Template method - 
+
 45.What do you think about Spring Framework?
+Architectur- flexible(does't restrict choices in framework)
+Design - losoly coupled
+code - easy unit testing
+features - DI, IOC, Autowiring, Component scan
+
+
 46.Why is Spring Popular?
 47Can you give a big picture of the Spring Framework?
+
+
 48.Spring MVC
+
 49.What is Model 1 architecture?
+Browser ->JSP -> model
+
 50.What is Model 2 architecture?
+Browser ->Servlet ->view -> model
+
 51.What is Model 2 Front Controller architecture?
+Browser -> froncontroller- > view or Servlet ->Model
+
 Can you show an example controller method in Spring MVC?
+@RequestMapping(value= "/lits", method= ReuqestMethod.GET)
+
+
+
 Can you explain a simple flow in Spring MVC?
+
+
 What is a ViewResolver?
 What is Model?
 What is ModelAndView?
 What is a RequestMapping?
 What is Dispatcher Servlet?
+
+
 How do you set up Dispatcher Servlet?
 What is a form backing object?
 How is validation done using Spring MVC?
 What is BindingResult?
 How do you map validation results to your view?
 What are Spring Form Tags?
+
+
 What is a Path Variable?
+URI http:localhost:8080/todos/1
+
+@Requestmapping(value= "/todos/{id}")
+public ToDo retrieveTodos(@PathVariable int id)
+
 What is a Model Attribute?
+@ModelAttribute
+indicated purpose of that method is to add one or more model attribute. Its invoked before @RequestMapping methods and makes sure that mdoel is populated
+Used to fill the model with commonly needed atrributes like drop down. 
+
+
 What is a Session Attribute?
+List the names of model attributes which should be tranparently stored in the seession or some conversationnal storage
+@SessionAttributes("name")
+
+
+What is comtroller advice ?
+@ControllerAdvice - implement logic which is common to multiple controllers
+@ExceptionHandler  - 
 What is a init binder?
+
+
+ 
 How do you set default date format with Spring?
 Why is Spring MVC so popular?
 Spring Boot
