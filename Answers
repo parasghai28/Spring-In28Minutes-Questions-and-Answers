@@ -178,19 +178,32 @@ We can autowire by name in case of a problem like this.
 36.Does Spring Support CDI?
 37.Would you recommed to use CDI or Spring Annotations?
 38.What are the major features in different versions of Spring?
+  Spring 2.5 annotations came
+  Spriung 4 - java 8 support, @RestController annonatione 
+  Spring 5 - fucntional web framework, reactive programming, support for kotlin
+
 39.What are new features in Spring Framework 4.0?
 40.What are new features in Spring Framework 5.0?
 41.What are important Spring Modules?
+Core container - Beans, core , comtext, SPel(Spring expression langugae)
+Data layer - Spring JDBC, ORM frameowrks(Hibernate), oBject xml mapping framework, JMS, transactions
+Web layer - servlets, portlets, Spring MVC, Spring REST, web socket programming
+Test layers - Dependency injection, helps us to write tests easily with mocks
+
+
 42.What are important Spring Projects?
+Spring boot- for developing microservices, develop apps quickly, quick config, actuator
+Spring cloud - 
+
 43.What is the simplest way of ensuring that we are using single version of all Spring related dependencies?
 44.Name some of the design patterns used in Spring Framework?
 45.What do you think about Spring Framework?
 46.Why is Spring Popular?
 47Can you give a big picture of the Spring Framework?
-Spring MVC
-What is Model 1 architecture?
-What is Model 2 architecture?
-What is Model 2 Front Controller architecture?
+48.Spring MVC
+49.What is Model 1 architecture?
+50.What is Model 2 architecture?
+51.What is Model 2 Front Controller architecture?
 Can you show an example controller method in Spring MVC?
 Can you explain a simple flow in Spring MVC?
 What is a ViewResolver?
